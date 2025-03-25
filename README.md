@@ -24,24 +24,18 @@ CHIPS is a specialized cryptocurrency designed for decentralized gambling applic
    npm install
    ```
 
-3. **Configure environment variables**
-   Create a .env file in the root directory with the following content:
-   ```properties
-   VITE_VERUSCOIN_WALLET_URL=https://veruscoin.io/wallet.html
-   ```
-
-4. **Start the development server**
+3. **Start the development server**
    ```bash
    npm start
    ```
    This will launch the application at [http://localhost:3000](http://localhost:3000)
 
-5. **Build for production**
+4. **Build for production**
    ```bash
    npm run build
    ```
 
-6. **Preview production build**
+5. **Preview production build**
    ```bash
    npm run serve
    ```
