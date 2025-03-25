@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import fs from 'fs';
 import path from 'path';
 
 export default defineConfig({
@@ -11,11 +10,6 @@ export default defineConfig({
     // Add CORS headers to prevent cross-origin requests to dev server
     cors: false,
     // Restrict file system access to project directory
-    fs: {
-      strict: true,
-      // Explicitly deny access to sensitive directories
-      deny: ['.env', '.git', 'node_modules/@vite/env']
-    },
     // Optional: Add HTTP headers for additional security
     headers: {
       'X-Content-Type-Options': 'nosniff',
