@@ -94,24 +94,24 @@ const NotFound = () => {
           </div>
           
           {/* Playing cards - on the table */}
-          <div className="dino-card absolute left-[35%] top-[45%] z-10 shadow-lg rotate-[-15deg]">
+          <div className="dino-card absolute left-[23%] top-[45%] z-10 shadow-lg rotate-[-15deg]">
             <img src={pokerCard1} alt="Poker card" className="w-14 md:w-16 h-auto rounded-lg" />
           </div>
           
-          <div className="dino-card absolute right-[35%] top-[43%] z-10 shadow-lg rotate-[10deg]">
+          <div className="dino-card absolute right-[27%] top-[43%] z-10 shadow-lg rotate-[10deg]">
             <img src={pokerCard2} alt="Poker card" className="w-14 md:w-16 h-auto rounded-lg" />
           </div>
           
           {/* Empty chip spots - shown as translucent outlines */}
-          <div className="empty-chip absolute left-[45%] top-[50%] z-10">
+          <div className="empty-chip absolute left-[45%] top-[60%] z-10">
             <img src={emptyChip} alt="Empty chip" className="w-10 md:w-12 h-auto opacity-30" />
           </div>
           
-          <div className="empty-chip absolute right-[40%] top-[47%] z-10">
+          <div className="empty-chip absolute right-[32%] top-[35%] z-10">
             <img src={emptyChip} alt="Empty chip" className="w-10 md:w-12 h-auto opacity-30" />
           </div>
           
-          <div className="empty-chip absolute left-[30%] top-[45%] z-10">
+          <div className="empty-chip absolute left-[32%] top-[35%] z-10">
             <img src={emptyChip} alt="Empty chip" className="w-10 md:w-12 h-auto opacity-30" />
           </div>
         </div>
