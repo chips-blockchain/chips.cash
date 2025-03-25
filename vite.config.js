@@ -7,9 +7,15 @@ export default defineConfig({
   server: {
     port: 3000,
     open: true,
+    // Explicitly bind to localhost only
+    host: 'localhost',
     // Add CORS headers to prevent cross-origin requests to dev server
     cors: false,
     // Restrict file system access to project directory
+    fs: {
+      strict: true,
+      allow: ['./src']
+    },
     // Optional: Add HTTP headers for additional security
     headers: {
       'X-Content-Type-Options': 'nosniff',
