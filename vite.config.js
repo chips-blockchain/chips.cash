@@ -1,29 +1,60 @@
-import { defineConfig } from 'vite';
+import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 
-export default defineConfig({
-  plugins: [react()],
-  server: {
-    port: 3000,
-    open: true,
-    // Explicitly bind to localhost only
-    host: 'localhost',
-    // Add CORS headers to prevent cross-origin requests to dev server
-    cors: false,
-    // Restrict file system access to project directory
-    fs: {
-      strict: true,
-      allow: ['./src']
+export default defineConfig(({ mode }) => {
+  // Load env variables for the current mode
+  const env = loadEnv(mode, process.cwd());
+  
+  return {
+    plugins: [react()],
+    // Define base path - useful for GitHub Pages or subdirectory deployments
+    base: '/',
+    server: {
+      port: 3000,
+      open: true,
+      // In development, restrict to localhost
+      ...(mode === 'development' && {
+        host: 'localhost',
+        cors: false,
+        fs: {
+          strict: true,
+          allow: ['./src'],
+          deny: ['.env', '.git', 'node_modules/@vite/env']
+        },
+        headers: {
+          'X-Content-Type-Options': 'nosniff',
+          'X-Frame-Options': 'DENY'
+        }
+      })
     },
-    // Optional: Add HTTP headers for additional security
-    headers: {
-      'X-Content-Type-Options': 'nosniff',
-      'X-Frame-Options': 'DENY'
+    // Prevent leaking of source maps in production
+    build: {
+      sourcemap: mode === 'development',
+      // Optimize bundle size
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            react: ['react', 'react-dom'],
+            router: ['react-router-dom'],
+            vendor: ['framer-motion', 'axios']
+          }
+        }
+      },
+      // Minify output
+      minify: 'terser',
+      terserOptions: {
+        compress: {
+          drop_console: true,
+          drop_debugger: true
+        }
+      }
+    },
+    // Add alias for cleaner imports
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, './src')
+      }
     }
-  },
-  // Prevent leaking of source maps in development
-  build: {
-    sourcemap: process.env.NODE_ENV === 'production' ? false : 'inline'
-  }
+  };
 });

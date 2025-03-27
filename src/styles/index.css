@@ -1,6 +1,6 @@
-@import '@tailwindcss/postcss/base';
-@import '@tailwindcss/postcss/components';
-@import '@tailwindcss/postcss/utilities';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   /* Common variables */

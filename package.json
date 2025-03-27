@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "vite",
+    "start": "vite --host localhost",
+    "dev": "vite --host localhost",
     "build": "vite build",
-    "serve": "vite preview"
+    "preview": "vite preview",
+    "serve": "vite preview --host 0.0.0.0 --port 8080",
+    "lint": "eslint src --ext .js,.jsx",
+    "analyze": "vite build --mode analyze"
   },
   "dependencies": {
     "axios": "^1.8.4",
