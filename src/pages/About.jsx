@@ -233,7 +233,7 @@ const About = () => {
         <h2 className="text-3xl font-bold mb-8 text-center">PBaaS Technology</h2>
         <div className="neumorphic bg-dark-purple/30 p-8 rounded-lg">
             <p className="text-xl mb-8 text-center max-w-3xl mx-auto">
-            One of the key innovations behind CHIPS is our implementation of Platform-Based as a Service (PBaaS) technology. This architecture creates a flexible ecosystem for gambling applications.
+            One of the key innovations behind CHIPS is our implementation of Public Blockchains as a Service (PBaaS) technology. This architecture creates a flexible ecosystem for gambling applications.
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
