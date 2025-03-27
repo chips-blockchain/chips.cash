@@ -33,9 +33,9 @@ const ErrorPage = () => {
           
           <div className="tech-details p-4 bg-dark-purple/30 rounded-md mb-6 text-left">
             <p className="font-mono text-sm text-gray-300">
-              <span className="text-neon-purple">></span> Error Code: {code}<br />
-              <span className="text-neon-purple">></span> Timestamp: {new Date().toISOString()}<br />
-              <span className="text-neon-purple">></span> Protocol: HTTP/1.1<br />
+              <span className="text-neon-purple"></span> Error Code: {code}<br />
+              <span className="text-neon-purple"></span> Timestamp: {new Date().toISOString()}<br />
+              <span className="text-neon-purple"></span> Protocol: HTTP/1.1<br />
             </p>
           </div>
           
