@@ -367,12 +367,12 @@ const Wallet = () => {
           
           <div className="text-center">
             <a 
-              href="https://docs.verus.io/wallet/backup-restore.html" 
+              href="https://docs.verus.io/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="btn-primary inline-flex items-center"
             >
-              <FaKey className="mr-2" /> Complete Backup Documentation
+              <FaKey className="mr-2" /> Complete Documentation
             </a>
           </div>
         </div>
