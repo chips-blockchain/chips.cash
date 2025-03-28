@@ -325,7 +325,7 @@ const Wallet = () => {
                   In addition to wallet.dat backups, you can export private keys for individual addresses:
                 </p>
                 <div className="font-mono text-sm bg-black/30 p-4 rounded mt-3 overflow-auto">
-                  verus -chain=VRSC dumpprivkey "YourVerusAddress"<br />
+                  verus dumpprivkey "YourVerusAddress"<br />
                   verus -chain=CHIPS dumpprivkey "YourChipsAddress"<br />
                 </div>
                 <p className="mt-3">
