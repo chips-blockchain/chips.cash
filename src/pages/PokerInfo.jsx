@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FaGithub, FaDiscord, FaDownload, FaPlay, FaWallet, FaExchangeAlt } from 'react-icons/fa';
 
 const PokerInfo = () => {
@@ -193,16 +194,14 @@ const PokerInfo = () => {
               <div className="step-content">
                 <h3 className="text-xl font-semibold mb-3">Get a CHIPS Wallet</h3>
                 <p className="mb-4 text-lg">
-                  First, you'll need a wallet that supports CHIPS. The easiest way is to download the VerusCoin wallet, which has built-in support for CHIPS.
+                  First, you'll need a wallet that supports CHIPS. Visit our Wallet page for detailed instructions on setting up a wallet for CHIPS.
                 </p>
-                <a 
-                  href="https://veruscoin.io/wallet.html" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
+                <Link 
+                  to="/wallet" 
                   className="btn-secondary inline-flex items-center"
                 >
-                  <FaWallet className="mr-2" /> Download Wallet
-                </a>
+                  <FaWallet className="mr-2" /> Wallet Options
+                </Link>
               </div>
             </div>
             
