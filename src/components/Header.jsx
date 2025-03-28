@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FaBars, FaTimes, FaChevronRight } from 'react-icons/fa';
+import { FaBars, FaTimes, FaChevronRight, FaWallet } from 'react-icons/fa';
 import ThemeToggle from './ThemeToggle';
 import { ThemeContext } from '../context/ThemeContext';
 import logo from '../assets/images/logo_v3.png';
@@ -65,22 +65,26 @@ const Header = () => {
           
           {/* Desktop Navigation - Revamped with cyber styling */}
           <nav className="hidden md:flex items-center space-x-6">
-            {[
-              { path: '/', label: 'HOME' },
-              { path: '/about', label: 'ABOUT' },
-              { path: '/poker-info', label: 'POKER' }
-            ].map(link => (
-              <Link 
-                key={link.path}
-                to={link.path} 
-                className={`nav-link ${isActive(link.path) ? 'active-nav' : ''}`}
-              >
-                <span className="nav-text">{link.label}</span>
-                {isActive(link.path) && (
-                  <div className="nav-indicator"></div>
-                )}
-              </Link>
-            ))}
+          {[
+            { path: '/', label: 'HOME' },
+            { path: '/about', label: 'ABOUT' },
+            { path: '/wallet', label: 'WALLET', icon: <FaWallet className="mr-1 wallet-icon" /> },
+            { path: '/poker-info', label: 'POKER' }
+          ].map(link => (
+            <Link 
+              key={link.path}
+              to={link.path} 
+              className={`nav-link ${isActive(link.path) ? 'active-nav' : ''} ${link.path === '/wallet' ? 'wallet-nav-link' : ''}`}
+            >
+              <span className="nav-text flex items-center">
+                {link.icon && link.icon}
+                {link.label}
+              </span>
+              {isActive(link.path) && (
+                <div className="nav-indicator"></div>
+              )}
+            </Link>
+          ))}
 
             {/* Theme Toggle */}
             <div className="ml-2">
@@ -115,31 +119,21 @@ const Header = () => {
               {[
                 { path: '/', label: 'HOME' },
                 { path: '/about', label: 'ABOUT' },
+                { path: '/wallet', label: 'WALLET', highlight: true, icon: <FaWallet className="mr-2 text-neon-blue" /> },
                 { path: '/poker-info', label: 'POKER' }
               ].map((link, index) => (
-                <li key={link.path} className="pl-4 relative">
+                <li key={link.path} className={`pl-4 relative ${link.highlight ? 'my-2 py-1 bg-neon-blue/10 border border-neon-blue/30 rounded' : ''}`}>
                   {isActive(link.path) && (
                     <span className="absolute left-0 top-1/2 -translate-y-1/2 w-2 h-2/3 bg-neon-purple/30"></span>
                   )}
-                  {link.external ? (
-                    <a 
-                      href={link.path} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="text-theme-primary hover:text-neon-purple transition-colors flex items-center"
-                    >
-                      {link.label}
-                      <FaChevronRight className="ml-1 text-xs opacity-70" />
-                    </a>
-                  ) : (
-                    <Link 
-                      to={link.path} 
-                      className={`${isActive(link.path) ? 'text-neon-purple' : 'text-theme-primary'} hover:text-neon-purple transition-colors`}
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      {link.label}
-                    </Link>
-                  )}
+                  <Link 
+                    to={link.path} 
+                    className={`${isActive(link.path) ? 'text-neon-purple' : link.highlight ? 'text-neon-blue' : 'text-theme-primary'} hover:text-neon-purple transition-colors flex items-center`}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {link.icon && link.icon}
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>

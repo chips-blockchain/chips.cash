@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import PokerInfo from './pages/PokerInfo';
+import Wallet from './pages/Wallet';
 import NotFound from './pages/NotFound';
 import ErrorPage from './pages/ErrorPage';
 import Layout from './components/Layout';
@@ -17,6 +18,7 @@ function App() {
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
             <Route path="poker-info" element={<PokerInfo />} />
+            <Route path="/wallet" element={<Wallet />} />
             <Route path="error/:code" element={<ErrorPage />} />
             <Route path="*" element={<NotFound />} />
           </Route>
