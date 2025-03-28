@@ -149,19 +149,6 @@ const Wallet = () => {
             </div>
           </div>
           
-          <div className="bg-blue-900/30 border-l-4 border-blue-500 p-4 mt-6">
-            <div className="flex items-start">
-              <FaNetworkWired className="text-blue-500 text-xl mr-3 mt-1" />
-              <div>
-                <h4 className="text-lg font-semibold text-blue-400 mb-2">Important CLI Update</h4>
-                <p className="text-base">
-                  <strong>Standalone CHIPS CLI is no longer active.</strong> All CHIPS, vDEX, and other chain operations 
-                  are now performed through the Verus CLI using the chain parameter. This unified approach simplifies 
-                  development and maintenance while providing full access to all features.
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
