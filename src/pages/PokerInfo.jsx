@@ -214,7 +214,7 @@ const PokerInfo = () => {
                   You can acquire CHIPS through exchanges or by participating in the community. Check our Discord for the latest information on how to obtain CHIPS.
                 </p>
                 <a 
-                  href="https://discord.gg/chips" 
+                  href="https://github.com/komodoce/komodo-wallet-desktop-ce/releases" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="btn-secondary inline-flex items-center"
