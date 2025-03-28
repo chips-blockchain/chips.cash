@@ -135,9 +135,6 @@ const Wallet = () => {
               <p className="mb-2 text-green-400"># Access CHIPS blockchain</p>
               <p className="mb-4">verus -chain=CHIPS [command]</p>
               
-              <p className="mb-2 text-green-400"># Access vDEX blockchain</p>
-              <p className="mb-4">verus -chain=VDEX [command]</p>
-              
               <p className="mb-2 text-green-400"># Access other PBaaS chains</p>
               <p className="mb-4">verus -chain=CHAINNAME [command]</p>
               
