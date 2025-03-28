@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaDownload, FaWallet, FaExchangeAlt, FaKey, FaShieldAlt, FaExclamationTriangle, FaMobile } from 'react-icons/fa';
+import { FaDownload, FaWallet, FaExchangeAlt, FaKey, FaShieldAlt, FaExclamationTriangle, FaMobile, FaTerminal, FaNetworkWired } from 'react-icons/fa';
 
 const Wallet = () => {
   return (
@@ -87,96 +87,79 @@ const Wallet = () => {
 
       {/* CLI Wallet Section */}
       <section className="mb-16">
-        <h2 className="text-3xl font-bold mb-8 text-center">Command-Line Wallets</h2>
+        <h2 className="text-3xl font-bold mb-8 text-center">Command-Line Wallet</h2>
         <div className="neumorphic bg-dark-purple/30 p-8 rounded-lg">
           <p className="text-lg mb-6">
-            For advanced users who prefer direct control or need to run on servers, command-line wallets 
-            provide powerful capabilities without a graphical interface.
+            For advanced users who prefer direct control or need to run on servers, the Verus CLI wallet 
+            provides access to CHIPS and other chains through chain parameters.
           </p>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-            <div className="cyber-card-container noselect">
-                <div className="cyber-card-canvas">
-                    <div id="card" className="cyber-card">
-                    <div className="cyber-card-content">
-                        <div className="cyber-card-glare"></div>
-                        <div className="cyber-lines">
-                        <span></span><span></span><span></span><span></span>
-                        </div>
-                        <div className="cyber-card-title">CHIPS CLI Wallet</div>
-                        <div className="cyber-card-text">
-                        The native CHIPS command-line wallet.
-                        <ul className="list-disc pl-5 mt-2 space-y-1 text-sm">
-                            <li>Native chain support</li>
-                            <li>Full node capabilities</li>
-                            <li>Ideal for servers & staking</li>
-                        </ul>
-                        <div className="mt-3">
-                            <a 
-                            href="https://github.com/chips-blockchain/chips" 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="text-xs px-2 py-1 bg-neon-purple/80 rounded inline-flex items-center"
-                            >
-                            <FaDownload className="mr-1 text-xs" /> GitHub
-                            </a>
-                        </div>
-                        </div>
-                        <div className="corner-elements">
-                        <span></span><span></span><span></span><span></span>
-                        </div>
+          <div className="cyber-card-container noselect max-w-2xl mx-auto mb-8">
+            <div className="cyber-card-canvas">
+              <div id="card" className="cyber-card">
+                <div className="cyber-card-content">
+                  <div className="cyber-card-glare"></div>
+                  <div className="cyber-lines">
+                    <span></span><span></span><span></span><span></span>
+                  </div>
+                  <div className="cyber-card-title">Verus CLI Wallet</div>
+                  <div className="cyber-card-text">
+                    Unified command-line interface for all chains.
+                    <ul className="list-disc pl-5 mt-2 space-y-1 text-sm">
+                      <li>All-in-one chain access</li>
+                      <li>Perfect for servers & staking</li>
+                      <li>Advanced feature support</li>
+                    </ul>
+                    <div className="mt-3">
+                      <a 
+                        href="https://github.com/VerusCoin/VerusCoin" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-xs px-2 py-1 bg-neon-purple/80 rounded inline-flex items-center"
+                      >
+                        <FaDownload className="mr-1 text-xs" /> GitHub
+                      </a>
                     </div>
-                    </div>
+                  </div>
+                  <div className="corner-elements">
+                    <span></span><span></span><span></span><span></span>
+                  </div>
                 </div>
-            </div>
-            
-            <div className="cyber-card-container noselect">
-                <div className="cyber-card-canvas">
-                    <div id="card" className="cyber-card">
-                        <div className="cyber-card-content">
-                            <div className="cyber-card-glare"></div>
-                            <div className="cyber-lines">
-                            <span></span><span></span><span></span><span></span>
-                            </div>
-                            <div className="cyber-card-title">Verus CLI Wallet</div>
-                            <div className="cyber-card-text">
-                            Command-line wallet with CHIPS support.
-                            <ul className="list-disc pl-5 mt-2 space-y-1 text-sm">
-                                <li>Full Verus features</li>
-                                <li>PBaaS chain management</li>
-                                <li>Staking & identity features</li>
-                            </ul>
-                            <div className="mt-3">
-                                <a 
-                                href="https://github.com/VerusCoin/VerusCoin" 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                                className="text-xs px-2 py-1 bg-neon-purple/80 rounded inline-flex items-center"
-                                >
-                                <FaDownload className="mr-1 text-xs" /> GitHub
-                                </a>
-                            </div>
-                            </div>
-                            <div className="corner-elements">
-                            <span></span><span></span><span></span><span></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              </div>
             </div>
           </div>
           
           <div className="bg-dark-purple/50 p-6 rounded-lg mt-4">
-            <h3 className="text-xl font-semibold mb-3 text-neon-purple">CLI Backup Commands</h3>
+            <h3 className="text-xl font-semibold mb-3 text-neon-purple">Accessing Different Chains via CLI</h3>
             <div className="font-mono text-sm bg-black/30 p-4 rounded overflow-auto">
-              <p className="mb-2 text-green-400"># Backup wallet.dat file for CHIPS</p>
-              <p className="mb-4">chips-cli backupwallet /path/to/backup/chips-wallet-backup.dat</p>
+              <p className="mb-2 text-green-400"># Access CHIPS blockchain</p>
+              <p className="mb-4">verus -chain=CHIPS [command]</p>
               
-              <p className="mb-2 text-green-400"># Backup wallet.dat file for Verus</p>
-              <p className="mb-4">verus backupwallet /path/to/backup/verus-wallet-backup.dat</p>
+              <p className="mb-2 text-green-400"># Access vDEX blockchain</p>
+              <p className="mb-4">verus -chain=VDEX [command]</p>
               
-              <p className="mb-2 text-green-400"># Export private keys (alternative backup method)</p>
-              <p>verus dumpprivkey YOUR_ADDRESS</p>
+              <p className="mb-2 text-green-400"># Access other PBaaS chains</p>
+              <p className="mb-4">verus -chain=CHAINNAME [command]</p>
+              
+              <p className="mb-2 text-green-400"># Example backup commands</p>
+              <p className="mb-4">verus -chain=CHIPS backupwallet /path/to/backup/chips-wallet-backup.dat</p>
+              
+              <p className="mb-2 text-green-400"># Export private keys</p>
+              <p>verus -chain=CHIPS dumpprivkey "YourAddress"</p>
+            </div>
+          </div>
+          
+          <div className="bg-blue-900/30 border-l-4 border-blue-500 p-4 mt-6">
+            <div className="flex items-start">
+              <FaNetworkWired className="text-blue-500 text-xl mr-3 mt-1" />
+              <div>
+                <h4 className="text-lg font-semibold text-blue-400 mb-2">Important CLI Update</h4>
+                <p className="text-base">
+                  <strong>Standalone CHIPS CLI is no longer active.</strong> All CHIPS, vDEX, and other chain operations 
+                  are now performed through the Verus CLI using the chain parameter. This unified approach simplifies 
+                  development and maintenance while providing full access to all features.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -191,42 +174,42 @@ const Wallet = () => {
           </p>
           
           <div className="cyber-card-container noselect max-w-2xl mx-auto">
-  <div className="cyber-card-canvas">
-    <div id="card" className="cyber-card">
-      <div className="cyber-card-content">
-        <div className="cyber-card-glare"></div>
-        <div className="cyber-lines">
-          <span></span><span></span><span></span><span></span>
-        </div>
-        <div className="feature-icon">
-          <FaMobile className="text-neon-purple text-3xl" />
-        </div>
-        <div className="cyber-card-title">Verus Mobile</div>
-        <div className="cyber-card-text">
-          Official mobile wallet with CHIPS support.
-          <ul className="list-disc pl-5 mt-2 space-y-1 text-sm text-left">
-            <li>iOS and Android</li>
-            <li>Multi-currency</li>
-            <li>Biometric security</li>
-          </ul>
-          <div className="mt-4">
-            <a 
-              href="https://verus.io/wallet/mobile" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="btn-primary inline-flex items-center text-sm px-3 py-1"
-            >
-              <FaDownload className="mr-1" /> Get App
-            </a>
+            <div className="cyber-card-canvas">
+              <div id="card" className="cyber-card">
+                <div className="cyber-card-content">
+                  <div className="cyber-card-glare"></div>
+                  <div className="cyber-lines">
+                    <span></span><span></span><span></span><span></span>
+                  </div>
+                  <div className="feature-icon">
+                    <FaMobile className="text-neon-purple text-3xl" />
+                  </div>
+                  <div className="cyber-card-title">Verus Mobile</div>
+                  <div className="cyber-card-text">
+                    Official mobile wallet with CHIPS support.
+                    <ul className="list-disc pl-5 mt-2 space-y-1 text-sm text-left">
+                      <li>iOS and Android</li>
+                      <li>Multi-currency</li>
+                      <li>Biometric security</li>
+                    </ul>
+                    <div className="mt-4">
+                      <a 
+                        href="https://verus.io/wallet/mobile" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="btn-primary inline-flex items-center text-sm px-3 py-1"
+                      >
+                        <FaDownload className="mr-1" /> Get App
+                      </a>
+                    </div>
+                  </div>
+                  <div className="corner-elements">
+                    <span></span><span></span><span></span><span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-        <div className="corner-elements">
-          <span></span><span></span><span></span><span></span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
           
           <div className="bg-yellow-900/30 border-l-4 border-yellow-500 p-4 mt-8">
             <div className="flex items-start">
@@ -355,8 +338,8 @@ const Wallet = () => {
                   In addition to wallet.dat backups, you can export private keys for individual addresses:
                 </p>
                 <div className="font-mono text-sm bg-black/30 p-4 rounded mt-3 overflow-auto">
-                  verus dumpprivkey "YourVerusAddress"<br />
-                  chips-cli dumpprivkey "YourChipsAddress"
+                  verus -chain=VRSC dumpprivkey "YourVerusAddress"<br />
+                  verus -chain=CHIPS dumpprivkey "YourChipsAddress"<br />
                 </div>
                 <p className="mt-3">
                   Store these private keys securely in an encrypted, offline location.
@@ -389,15 +372,10 @@ const Wallet = () => {
             <p className="mb-2">macOS: ~/Library/Application Support/Komodo/VRSC</p>
             <p className="mb-4">Linux: ~/.komodo/VRSC</p>
             
-            <p className="mb-2 text-green-400"># PBaaS chains (like vDEX) are in separate folders:</p>
-            <p className="mb-2">Windows: %APPDATA%\Roaming\Komodo\PBAAS_CHAINNAME</p>
-            <p className="mb-2">macOS: ~/Library/Application Support/Komodo/PBAAS_CHAINNAME</p>
-            <p className="mb-4">Linux: ~/.komodo/PBAAS_CHAINNAME</p>
-            
             <p className="mb-2 text-green-400"># CHIPS wallet.dat locations:</p>
-            <p className="mb-2">Windows: %APPDATA%\Roaming\Chips</p>
-            <p className="mb-2">macOS: ~/Library/Application Support/Chips</p>
-            <p>Linux: ~/.chips</p>
+            <p className="mb-2">Windows: %APPDATA%\Roaming\verus\pbaas\f315367528394674d45277e369629605a1c3ce9f\</p>
+            <p className="mb-2">macOS: ~/Library/Application Support/verus/pbaas/f315367528394674d45277e369629605a1c3ce9f/</p>
+            <p className="mb-4">Linux: ~/.verus/pbaas/f315367528394674d45277e369629605a1c3ce9f/</p>
           </div>
           
           <div className="text-center">
